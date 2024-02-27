@@ -78,4 +78,17 @@ public class TaskService {
         taskRepository.save(entity);
         return true;
     }
+
+    public TaskDTO getById(Integer id) {
+        Optional<TaskEntity>optional=taskRepository.findById(id);
+        TaskEntity entity=optional.get();
+        TaskDTO dto=new TaskDTO();
+        dto.setId(entity.getId());
+        dto.setTitle(entity.getTitle());
+        dto.setContent(entity.getContent());
+        dto.setTaskStatus(entity.getTaskStatus());
+        dto.setCreated_date(entity.getCreated_date());
+        dto.setFinished_date(entity.getFinished_date());
+        return dto;
+    }
 }

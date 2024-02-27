@@ -15,3 +15,6 @@ GET localhost:8081/task/completed_task_list
 
 ### completed task
 PUT localhost:8081/task/completedTask/1
+
+### get task by Id
+GET localhost:8081/task/getById/1

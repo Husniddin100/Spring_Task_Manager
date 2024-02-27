@@ -2,7 +2,6 @@ package com.example.Spring_TaskManager.controller;
 
 import com.example.Spring_TaskManager.dto.TaskDTO;
 import com.example.Spring_TaskManager.service.TaskService;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +31,9 @@ public class TaskController {
     @PutMapping("/completedTask/{id}")
     public ResponseEntity<Boolean>completedTask(@PathVariable Integer id){
         return ResponseEntity.ok(taskService.completedTask(id));
+    }
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<TaskDTO> getById(@PathVariable Integer id){
+        return ResponseEntity.ok(taskService.getById(id));
     }
 }
