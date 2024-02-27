@@ -6,3 +6,12 @@ Content-Type: application/json
   "title": "bozor",
   "content": "bugun bozorga borish kerak"
 }
+
+### get task list
+GET localhost:8081/task/task_list
+
+### finished task list
+GET localhost:8081/task/completed_task_list
+
+### completed task
+PUT localhost:8081/task/completedTask/1

@@ -19,10 +19,18 @@ public class TaskController {
     public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO dto) {
         return ResponseEntity.ok(taskService.createTask(dto));
     }
-
-    @GetMapping("/tasklist")
+    @GetMapping("/task_list")
     public ResponseEntity<List<TaskDTO>> getList() {
         List<TaskDTO> list = taskService.getList();
         return ResponseEntity.ok(list);
+    }
+    @GetMapping("/completed_task_list")
+    public ResponseEntity<List<TaskDTO>> getCompletedTaskList() {
+        List<TaskDTO> list = taskService.getCompletedTaskList();
+        return ResponseEntity.ok(list);
+    }
+    @PutMapping("/completedTask/{id}")
+    public ResponseEntity<Boolean>completedTask(@PathVariable Integer id){
+        return ResponseEntity.ok(taskService.completedTask(id));
     }
 }
